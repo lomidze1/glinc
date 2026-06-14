@@ -40,3 +40,6 @@ yarn-error.log*
 
 # Local agent/session files
 .claude/
+
+# TypeScript build cache
+*.tsbuildinfo

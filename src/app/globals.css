@@ -1,0 +1,76 @@
+/*
+ * Glinc — design tokens ("Studio Dark")
+ * Colors sampled from the Web2Wireframe brand assets + the Glinc logo.
+ * Refined further during Phase 1 (design system).
+ */
+:root {
+  /* Brand surfaces */
+  --bg: #0e3a3f; /* dark teal — primary canvas */
+  --bg-deep: #0b2e32; /* deeper sections */
+  --bg-elevated: #104244; /* cards / raised surfaces */
+
+  /* Brand accent (canonical, from the GL inc logo) */
+  --accent: #e94e1b;
+  --accent-hover: #ff5e2b;
+
+  /* Text */
+  --text: #f3f0e8; /* cream */
+  --text-muted: #9ab6ae; /* sage */
+
+  /* Lines */
+  --border: rgba(243, 240, 232, 0.1);
+
+  /* Typography (font vars are injected by next/font in layout.tsx) */
+  --font-display: var(--font-display-src), "Geist", system-ui, sans-serif;
+  --font-sans: var(--font-sans-src), system-ui, -apple-system, sans-serif;
+  --font-mono: var(--font-mono-src), ui-monospace, "SFMono-Regular", monospace;
+
+  /* Layout */
+  --radius: 12px;
+  --maxw: 1100px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  min-height: 100dvh;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+::selection {
+  background: var(--accent);
+  color: #fff;
+}

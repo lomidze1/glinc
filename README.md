@@ -153,7 +153,23 @@ metrics** (the audience verifies on Figma Community; fake numbers destroy trust)
 
 ## 11. Local development
 
-> To be filled in once the app is scaffolded (Phase 0).
+Requirements: Node.js 20+ and npm.
+
+```bash
+npm install          # install dependencies
+npm run dev          # dev server @ http://localhost:3000
+npm run build        # production build (static)
+npm run start        # serve the production build
+
+npm run lint         # ESLint
+npm run typecheck    # tsc --noEmit
+npm test             # Vitest unit/component tests
+npm run test:e2e     # Playwright e2e (run `npx playwright install` once first)
+```
+
+Stack: Next.js 16 (App Router) · React 19 · TypeScript · CSS Modules + CSS-variable
+design tokens (`src/app/globals.css`). Tests: Vitest + React Testing Library (unit),
+Playwright (e2e).
 
 ## 12. Domains
 
