@@ -21,13 +21,15 @@
   --border: rgba(243, 240, 232, 0.1);
 
   /* Typography (font vars are injected by next/font in layout.tsx) */
-  --font-display: var(--font-display-src), "Geist", system-ui, sans-serif;
+  --font-display: var(--font-display-src), "Archivo", system-ui, sans-serif;
   --font-sans: var(--font-sans-src), system-ui, -apple-system, sans-serif;
   --font-mono: var(--font-mono-src), ui-monospace, "SFMono-Regular", monospace;
 
   /* Layout */
-  --radius: 12px;
-  --maxw: 1100px;
+  --radius: 14px;
+  --maxw: 1120px;
+  --gutter: clamp(20px, 5vw, 56px);
+  --section-y: clamp(72px, 12vw, 152px);
 }
 
 *,
@@ -56,6 +58,37 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+/* Atmospheric depth — accent glow top-right, faint sage glow top-left. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      55% 45% at 88% -8%,
+      color-mix(in srgb, var(--accent) 16%, transparent),
+      transparent 70%
+    ),
+    radial-gradient(
+      45% 38% at -5% 2%,
+      color-mix(in srgb, var(--text-muted) 12%, transparent),
+      transparent 70%
+    );
+}
+
+/* Subtle film grain for texture. */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -73,4 +106,41 @@ h3 {
 ::selection {
   background: var(--accent);
   color: #fff;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Staggered page-load reveal — CSS only. Set --d for per-element delay. */
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.reveal {
+  opacity: 0;
+  animation: reveal-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: var(--d, 0ms);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-delay: 0ms !important;
+    transition-duration: 0.001ms !important;
+  }
+  .reveal {
+    opacity: 1;
+  }
 }

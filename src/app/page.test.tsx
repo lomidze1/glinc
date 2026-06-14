@@ -3,15 +3,17 @@ import { describe, it, expect } from "vitest";
 import Home from "./page";
 
 describe("Home", () => {
-  it("renders the headline", () => {
+  it("renders the hero headline", () => {
     render(<Home />);
-    expect(screen.getByRole("heading", { level: 1 })).toHaveTextContent(
-      /tools that make design/i,
-    );
+    expect(
+      screen.getByRole("heading", { level: 1, name: /tools that make design/i }),
+    ).toBeInTheDocument();
   });
 
-  it("renders the studio kicker", () => {
+  it("showcases the Web2Wireframe plugin linking to its product site", () => {
     render(<Home />);
-    expect(screen.getByText("// studio for designers")).toBeInTheDocument();
+    expect(screen.getByText("Web2Wireframe")).toBeInTheDocument();
+    const link = screen.getByRole("link", { name: /web2wireframe/i });
+    expect(link).toHaveAttribute("href", "https://web2wireframe.design");
   });
 });

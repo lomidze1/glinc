@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Space_Grotesk } from "next/font/google";
+import { Geist, Geist_Mono, Archivo } from "next/font/google";
 import "./globals.css";
 
 // Body + UI
@@ -7,10 +7,10 @@ const sans = Geist({ variable: "--font-sans-src", subsets: ["latin"] });
 // Micro-labels (// LIKE_THIS)
 const mono = Geist_Mono({ variable: "--font-mono-src", subsets: ["latin"] });
 // Display headlines — a heavy grotesque, matching the brand banners
-const display = Space_Grotesk({
+const display = Archivo({
   variable: "--font-display-src",
   subsets: ["latin"],
-  weight: ["500", "700"],
+  weight: ["600", "700", "800"],
 });
 
 const SITE_URL = "https://glinc.io";
