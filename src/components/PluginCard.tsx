@@ -1,15 +1,11 @@
+import Link from "next/link";
 import { Badge } from "./Badge";
 import type { Plugin } from "@/data/plugins";
 import styles from "./PluginCard.module.css";
 
 export function PluginCard({ plugin }: { plugin: Plugin }) {
   return (
-    <a
-      href={plugin.href}
-      target="_blank"
-      rel="noopener noreferrer"
-      className={styles.card}
-    >
+    <Link href={`/plugins/${plugin.slug}`} className={styles.card}>
       <span className={styles.iconWrap}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src={plugin.icon} alt="" width={32} height={32} aria-hidden="true" />
@@ -33,6 +29,6 @@ export function PluginCard({ plugin }: { plugin: Plugin }) {
       <span aria-hidden="true" className={styles.arrow}>
         →
       </span>
-    </a>
+    </Link>
   );
 }

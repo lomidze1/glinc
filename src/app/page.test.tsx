@@ -10,10 +10,10 @@ describe("Home", () => {
     ).toBeInTheDocument();
   });
 
-  it("showcases the Web2Wireframe plugin linking to its product site", () => {
+  it("showcases the Web2Wireframe plugin linking to its detail page", () => {
     render(<Home />);
     expect(screen.getByText("Web2Wireframe")).toBeInTheDocument();
     const link = screen.getByRole("link", { name: /web2wireframe/i });
-    expect(link).toHaveAttribute("href", "https://web2wireframe.design");
+    expect(link).toHaveAttribute("href", "/plugins/web2wireframe");
   });
 });

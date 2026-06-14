@@ -1,0 +1,53 @@
+.page {
+  padding-top: clamp(56px, 10vw, 112px);
+  padding-bottom: clamp(56px, 9vw, 104px);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1fr);
+  gap: clamp(40px, 7vw, 88px);
+  align-items: start;
+}
+
+@media (max-width: 860px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: sticky;
+  top: 100px;
+}
+
+@media (max-width: 860px) {
+  .intro {
+    position: static;
+  }
+}
+
+.title {
+  font-size: clamp(38px, 6vw, 64px);
+  letter-spacing: -0.035em;
+}
+
+.lede {
+  max-width: 46ch;
+  color: var(--text-muted);
+  font-size: clamp(16px, 2vw, 19px);
+}
+
+.direct {
+  margin-top: 8px;
+  color: var(--text-muted);
+  font-size: 15px;
+}
+
+.mail {
+  color: var(--accent);
+  border-bottom: 1px solid color-mix(in srgb, var(--accent) 40%, transparent);
+}

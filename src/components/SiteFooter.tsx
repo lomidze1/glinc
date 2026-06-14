@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Container } from "./Container";
 import { site } from "@/data/site";
 import styles from "./SiteFooter.module.css";
@@ -15,8 +16,8 @@ export function SiteFooter() {
           </span>
         </div>
         <nav className={styles.links} aria-label="Footer">
-          <a href="#plugins">Plugins</a>
-          <a href="#studio">Studio</a>
+          <Link href="/plugins">Plugins</Link>
+          <Link href="/contact">Contact</Link>
           <a href={`mailto:${site.email}`}>{site.email}</a>
         </nav>
       </Container>

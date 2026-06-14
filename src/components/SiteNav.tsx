@@ -10,11 +10,11 @@ export function SiteNav() {
           GL<span className={styles.inc}>inc</span>
         </Link>
         <nav className={styles.nav} aria-label="Primary">
-          <a href="#plugins">Plugins</a>
-          <a href="#studio">Studio</a>
-          <a href="#contact" className={styles.cta}>
+          <Link href="/plugins">Plugins</Link>
+          <Link href="/#studio">Studio</Link>
+          <Link href="/contact" className={styles.cta}>
             Contact
-          </a>
+          </Link>
         </nav>
       </Container>
     </header>

@@ -171,6 +171,10 @@ Stack: Next.js 16 (App Router) · React 19 · TypeScript · CSS Modules + CSS-va
 design tokens (`src/app/globals.css`). Tests: Vitest + React Testing Library (unit),
 Playwright (e2e).
 
+Contact form: copy `.env.local.example` → `.env.local` and set `RESEND_API_KEY` +
+`CONTACT_FROM_EMAIL` to enable email delivery. Until then the form responds with a clear
+"not live yet" message rather than pretending a message was sent.
+
 ## 12. Domains
 
 - `glinc.io` — this site (owned; not yet deployed).

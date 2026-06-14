@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Archivo } from "next/font/google";
+import { SiteNav } from "@/components/SiteNav";
+import { SiteFooter } from "@/components/SiteFooter";
 import "./globals.css";
 
 // Body + UI
@@ -49,7 +51,11 @@ export default function RootLayout({
       lang="en"
       className={`${sans.variable} ${mono.variable} ${display.variable}`}
     >
-      <body>{children}</body>
+      <body>
+        <SiteNav />
+        {children}
+        <SiteFooter />
+      </body>
     </html>
   );
 }

@@ -1,19 +1,18 @@
 import Image from "next/image";
-import { SiteNav } from "@/components/SiteNav";
-import { SiteFooter } from "@/components/SiteFooter";
 import { Container } from "@/components/Container";
 import { Kicker } from "@/components/Kicker";
 import { Button } from "@/components/Button";
 import { PluginCard } from "@/components/PluginCard";
 import { Stats } from "@/components/Stats";
+import { JsonLd } from "@/components/JsonLd";
+import { organizationSchema } from "@/lib/schema";
 import { plugins } from "@/data/plugins";
-import { site } from "@/data/site";
 import styles from "./page.module.css";
 
 export default function Home() {
   return (
     <>
-      <SiteNav />
+      <JsonLd data={organizationSchema} />
 
       <main>
         {/* Hero */}
@@ -116,14 +115,12 @@ export default function Home() {
                 down today.
               </p>
               <div className={styles.ctas}>
-                <Button href={`mailto:${site.email}`}>Email us</Button>
+                <Button href="/contact">Get in touch</Button>
               </div>
             </div>
           </Container>
         </section>
       </main>
-
-      <SiteFooter />
     </>
   );
 }
