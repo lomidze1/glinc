@@ -10,6 +10,7 @@ import { JsonLd } from "@/components/JsonLd";
 import {
   softwareApplicationSchema,
   breadcrumbSchema,
+  SITE_URL,
 } from "@/lib/schema";
 import { plugins, getPlugin } from "@/data/plugins";
 import styles from "./detail.module.css";
@@ -35,7 +36,7 @@ export async function generateMetadata({
     openGraph: {
       title: `${plugin.name} — Glinc`,
       description: plugin.description,
-      images: [plugin.cover],
+      images: [`${SITE_URL}${plugin.cover}`],
     },
   };
 }
@@ -61,8 +62,12 @@ export default async function PluginDetail({
       />
 
       <Container>
-        <Link href="/plugins" className={styles.back}>
-          ← All plugins
+        <Link
+          href="/plugins"
+          className={styles.back}
+          aria-label="Back to all plugins"
+        >
+          <span aria-hidden="true">←</span> All plugins
         </Link>
 
         <header className={styles.header}>

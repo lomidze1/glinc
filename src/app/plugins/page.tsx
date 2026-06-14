@@ -12,6 +12,11 @@ export const metadata: Metadata = {
   description:
     "Tools by Glinc for designers — small, focused Figma plugins that remove friction from the early part of design.",
   alternates: { canonical: "/plugins" },
+  openGraph: {
+    title: "Plugins — Glinc",
+    description:
+      "Small, focused Figma plugins that remove friction from the early part of design.",
+  },
 };
 
 export default function PluginsPage() {

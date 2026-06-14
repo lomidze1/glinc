@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import { Container } from "@/components/Container";
 import { Kicker } from "@/components/Kicker";
@@ -9,6 +10,10 @@ import { organizationSchema } from "@/lib/schema";
 import { plugins } from "@/data/plugins";
 import styles from "./page.module.css";
 
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
+
 export default function Home() {
   return (
     <>
@@ -18,7 +23,7 @@ export default function Home() {
         {/* Hero */}
         <section className={styles.hero}>
           <Container>
-            <div className={`${styles.heroInner} reveal`}>
+            <div className={styles.heroInner}>
               <div className="reveal" style={{ "--d": "60ms" } as React.CSSProperties}>
                 <Kicker>studio for designers</Kicker>
               </div>

@@ -48,10 +48,20 @@
   color: var(--text-muted);
 }
 
+/* Border highlight on any focus; the global :focus-visible outline still
+   shows for keyboard users (we no longer suppress it). */
 .input:focus {
-  outline: none;
   border-color: var(--accent);
   background: var(--bg-deep);
+}
+
+/* Normalize the native select so it matches the inputs across browsers. */
+select.input {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none' stroke='%239ab6ae' stroke-width='1.5'%3E%3Cpath d='M1 1.5 6 6.5 11 1.5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 15px center;
+  padding-right: 40px;
 }
 
 .textarea {
@@ -96,7 +106,7 @@
 }
 
 .error {
-  color: #ff9b7a;
+  color: var(--error);
   font-size: 14px;
 }
 

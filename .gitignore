@@ -38,8 +38,11 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# Local agent/session files
-.claude/
+# Claude config — track shared agents/skills, ignore local settings
+.claude/*
+!.claude/agents/
+!.claude/skills/
+.claude/settings.local.json
 
 # TypeScript build cache
 *.tsbuildinfo

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Archivo } from "next/font/google";
 import { SiteNav } from "@/components/SiteNav";
 import { SiteFooter } from "@/components/SiteFooter";
+import { SITE_URL } from "@/lib/schema";
 import "./globals.css";
 
 // Body + UI
@@ -14,8 +15,6 @@ const display = Archivo({
   subsets: ["latin"],
   weight: ["600", "700", "800"],
 });
-
-const SITE_URL = "https://glinc.io";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),

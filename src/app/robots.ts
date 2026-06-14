@@ -1,6 +1,5 @@
 import type { MetadataRoute } from "next";
-
-const SITE_URL = "https://glinc.io";
+import { SITE_URL } from "@/lib/schema";
 
 export default function robots(): MetadataRoute.Robots {
   return {

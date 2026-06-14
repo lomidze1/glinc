@@ -8,13 +8,15 @@
   display: flex;
   flex-direction: column;
   gap: 22px;
-  max-width: 18ch;
 }
 
 .title {
   font-size: clamp(48px, 9vw, 104px);
   letter-spacing: -0.035em;
   font-weight: 800;
+  /* Narrow, stacked headline — constrain the title, not the whole column,
+     so the lede below can breathe to its own 54ch. */
+  max-width: 15ch;
 }
 
 .title .accent {

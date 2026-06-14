@@ -20,6 +20,9 @@
   /* Lines */
   --border: rgba(243, 240, 232, 0.1);
 
+  /* States */
+  --error: #ff9b7a;
+
   /* Typography (font vars are injected by next/font in layout.tsx) */
   --font-display: var(--font-display-src), "Archivo", system-ui, sans-serif;
   --font-sans: var(--font-sans-src), system-ui, -apple-system, sans-serif;

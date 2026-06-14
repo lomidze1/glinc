@@ -43,6 +43,12 @@
   color: var(--text-muted);
 }
 
+.links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+
 @media (hover: hover) {
   .links a:hover {
     color: var(--text);

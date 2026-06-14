@@ -3,6 +3,8 @@ import { Resend } from "resend";
 import { site } from "@/data/site";
 
 const MAX = { name: 100, email: 200, message: 5000 };
+const INTENTS = ["collaboration", "feedback", "other"] as const;
+type Intent = (typeof INTENTS)[number];
 
 function isEmail(value: string) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
@@ -24,8 +26,11 @@ export async function POST(req: Request) {
 
   const name = String(body.name ?? "").trim();
   const email = String(body.email ?? "").trim();
-  const intent = String(body.intent ?? "other").trim();
   const message = String(body.message ?? "").trim();
+  // Allowlist intent — never let arbitrary text into the email subject/body.
+  const intent: Intent = INTENTS.includes(body.intent as Intent)
+    ? (body.intent as Intent)
+    : "other";
 
   if (!name || name.length > MAX.name) {
     return NextResponse.json({ error: "Please enter your name." }, { status: 400 });
