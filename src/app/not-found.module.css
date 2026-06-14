@@ -1,0 +1,31 @@
+.page {
+  display: flex;
+  align-items: center;
+  min-height: 70vh;
+  padding-block: clamp(64px, 12vw, 140px);
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  max-width: 48ch;
+}
+
+.title {
+  font-size: clamp(40px, 7vw, 76px);
+  letter-spacing: -0.035em;
+}
+
+.lede {
+  max-width: 46ch;
+  color: var(--text-muted);
+  font-size: clamp(16px, 2vw, 20px);
+}
+
+.ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 8px;
+}

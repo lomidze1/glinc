@@ -8,8 +8,8 @@ product marketing site; it introduces the company and showcases its plugins, the
 out to each product's own deep site (e.g. `web2wireframe.design`) and Figma Community
 listing.
 
-> Status: **Planning → scaffolding.** Code is not yet committed; this README captures the
-> full brief and decisions so the project can be built consistently.
+> Status: **v1 built on `dev`** (Home + Plugins + Contact, polished + reviewed). Remaining
+> before launch: connect Vercel and configure Resend, then merge `dev` → `main`.
 
 ---
 

@@ -2,9 +2,16 @@
   position: sticky;
   top: 0;
   z-index: 50;
-  backdrop-filter: blur(10px);
-  background: color-mix(in srgb, var(--bg) 72%, transparent);
+  /* Solid fallback for browsers without backdrop-filter. */
+  background: var(--bg);
   border-bottom: 1px solid var(--border);
+}
+
+@supports (backdrop-filter: blur(1px)) {
+  .header {
+    backdrop-filter: blur(10px);
+    background: color-mix(in srgb, var(--bg) 72%, transparent);
+  }
 }
 
 .inner {

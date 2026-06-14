@@ -51,8 +51,11 @@ export default function RootLayout({
       className={`${sans.variable} ${mono.variable} ${display.variable}`}
     >
       <body>
+        <a href="#main-content" className="skip-link">
+          Skip to content
+        </a>
         <SiteNav />
-        {children}
+        <div id="main-content">{children}</div>
         <SiteFooter />
       </body>
     </html>

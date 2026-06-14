@@ -4,6 +4,7 @@ import { Container } from "@/components/Container";
 import { Kicker } from "@/components/Kicker";
 import { Button } from "@/components/Button";
 import { PluginCard } from "@/components/PluginCard";
+import { Reveal } from "@/components/Reveal";
 import { Stats } from "@/components/Stats";
 import { JsonLd } from "@/components/JsonLd";
 import { organizationSchema } from "@/lib/schema";
@@ -74,55 +75,63 @@ export default function Home() {
         {/* Plugins */}
         <section id="plugins" className={styles.section}>
           <Container>
-            <header className={styles.sectionHead}>
-              <Kicker>what we build</Kicker>
-              <h2 className={styles.sectionTitle}>Plugins, crafted with care.</h2>
-              <p className={styles.sectionLede}>
-                Small, focused tools that remove friction from the early, messy
-                part of design. One is live today — more are on the way.
-              </p>
-            </header>
-            <div className={styles.pluginList}>
+            <Reveal>
+              <header className={styles.sectionHead}>
+                <Kicker>what we build</Kicker>
+                <h2 className={styles.sectionTitle}>
+                  Plugins, crafted with care.
+                </h2>
+                <p className={styles.sectionLede}>
+                  Small, focused tools that remove friction from the early, messy
+                  part of design. One is live today — more are on the way.
+                </p>
+              </header>
+            </Reveal>
+            <Reveal delay={80} className={styles.pluginList}>
               {plugins.map((p) => (
                 <PluginCard key={p.slug} plugin={p} />
               ))}
-            </div>
+            </Reveal>
           </Container>
         </section>
 
         {/* Studio */}
         <section id="studio" className={styles.section}>
           <Container>
-            <div className={styles.studio}>
-              <Kicker>the studio</Kicker>
-              <p className={styles.studioBody}>
-                Built by designers, for designers. We sweat the details so the
-                tools get out of your way — no bloat, no busywork, just a calmer
-                way to move from idea to layout.
-              </p>
-              {/* Honest by design: hidden until real numbers exist. */}
-              <Stats items={[]} />
-            </div>
+            <Reveal>
+              <div className={styles.studio}>
+                <Kicker>the studio</Kicker>
+                <p className={styles.studioBody}>
+                  Built by designers, for designers. We sweat the details so the
+                  tools get out of your way — no bloat, no busywork, just a calmer
+                  way to move from idea to layout.
+                </p>
+                {/* Honest by design: hidden until real numbers exist. */}
+                <Stats items={[]} />
+              </div>
+            </Reveal>
           </Container>
         </section>
 
         {/* Contact */}
         <section id="contact" className={styles.section}>
           <Container>
-            <div className={styles.contact}>
-              <Kicker>say hello</Kicker>
-              <h2 className={styles.contactTitle}>
-                Let&rsquo;s build something.
-              </h2>
-              <p className={styles.sectionLede}>
-                Two good reasons to reach out: a business collaboration, or to
-                tell us what you&rsquo;d want us to build next — and what slows you
-                down today.
-              </p>
-              <div className={styles.ctas}>
-                <Button href="/contact">Get in touch</Button>
+            <Reveal>
+              <div className={styles.contact}>
+                <Kicker>say hello</Kicker>
+                <h2 className={styles.contactTitle}>
+                  Let&rsquo;s build something.
+                </h2>
+                <p className={styles.sectionLede}>
+                  Two good reasons to reach out: a business collaboration, or to
+                  tell us what you&rsquo;d want us to build next — and what slows
+                  you down today.
+                </p>
+                <div className={styles.ctas}>
+                  <Button href="/contact">Get in touch</Button>
+                </div>
               </div>
-            </div>
+            </Reveal>
           </Container>
         </section>
       </main>
