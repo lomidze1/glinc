@@ -105,9 +105,9 @@ export const plugins: Plugin[] = [
           "SC 1.1.1 presence check, plus optional AI drafts with your own key.",
       },
     ],
-    links: [
-      { label: "Visit Legibly", href: "https://legibly.app", primary: true },
-    ],
+    // No CTA yet: legibly.app is not acquired and the site is not deployed.
+    // Add { label: "Visit Legibly", href: <live URL>, primary: true } at launch.
+    links: [],
   },
 ];
 
