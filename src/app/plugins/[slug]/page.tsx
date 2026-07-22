@@ -111,8 +111,10 @@ export default async function PluginDetail({
         </figure>
 
         <section className={styles.methods}>
-          <Kicker>ways to import</Kicker>
-          <h2 className={styles.methodsTitle}>Every input, one clean result.</h2>
+          <Kicker>{plugin.methodsKicker ?? "ways to import"}</Kicker>
+          <h2 className={styles.methodsTitle}>
+            {plugin.methodsTitle ?? "Every input, one clean result."}
+          </h2>
           <ul className={styles.methodList}>
             {plugin.importMethods.map((m) => (
               <li key={m.name} className={styles.method}>
