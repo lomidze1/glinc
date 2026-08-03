@@ -12,6 +12,9 @@ export type Plugin = {
   coverAlt: string;
   tags: string[];
   status: "live" | "coming-soon";
+  /** Kicker + heading for the methods section; defaults keep Web2Wireframe's copy. */
+  methodsKicker?: string;
+  methodsTitle?: string;
   importMethods: ImportMethod[];
   links: PluginLink[];
 };
@@ -61,6 +64,50 @@ export const plugins: Plugin[] = [
       },
       { label: "Read the docs", href: "https://web2wireframe.design/docs" },
     ],
+  },
+  {
+    slug: "legibly",
+    name: "Legibly",
+    tagline: "Accessibility, fixed. Not just flagged.",
+    description:
+      "Scan Figma designs against WCAG 2.2 AA and fix violations in one click, with your own design tokens.",
+    longDescription:
+      "Legibly is an accessibility correctness layer for Figma. It scans your selection against WCAG 2.2 AA with zero false positives, fixes violations in one click using your own variables and styles, and re-verifies every fix before it lands. Ambiguous cases are honestly flagged for review, never guessed.",
+    icon: "/plugins/legibly.svg",
+    cover: "/plugins/legibly-cover.png",
+    coverAlt:
+      "Legibly fixing a failing contrast ratio to a passing one with an on-system design token",
+    tags: ["Figma Plugin", "Accessibility"],
+    status: "coming-soon",
+    methodsKicker: "what it checks",
+    methodsTitle: "Five checks, three honest verdicts.",
+    importMethods: [
+      {
+        name: "Text contrast",
+        description:
+          "SC 1.4.3 with real effective-background resolution, gradients included.",
+      },
+      {
+        name: "Non-text contrast",
+        description: "SC 1.4.11 for icons and borders on interactive controls.",
+      },
+      {
+        name: "Target size",
+        description: "SC 2.5.8, a 24 by 24 minimum with the spacing exception.",
+      },
+      {
+        name: "Text spacing",
+        description: "SC 1.4.12 line-height floors for readable text.",
+      },
+      {
+        name: "Alt text",
+        description:
+          "SC 1.1.1 presence check, plus optional AI drafts with your own key.",
+      },
+    ],
+    // No CTA yet: legibly.app is not acquired and the site is not deployed.
+    // Add { label: "Visit Legibly", href: <live URL>, primary: true } at launch.
+    links: [],
   },
 ];
 
