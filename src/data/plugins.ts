@@ -111,6 +111,7 @@ export const plugins: Plugin[] = [
         href: "https://legibly.design",
         primary: true,
       },
+      { label: "Read the docs", href: "https://legibly.design/docs" },
     ],
   },
 ];
