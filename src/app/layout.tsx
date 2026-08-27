@@ -25,6 +25,17 @@ export const metadata: Metadata = {
   description:
     "Glinc is a studio building tools for designers, starting with Figma plugins. Crafted for speed, clarity, and a calmer design workflow.",
   applicationName: "Glinc",
+  // Served from /public so the URLs stay stable across deploys — Google only
+  // indexes a favicon whose URL doesn't move, and the app-router icon
+  // convention appends a content hash that changes with the artwork.
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "48x48", type: "image/x-icon" },
+      { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
+    ],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
+  },
   openGraph: {
     type: "website",
     url: SITE_URL,
