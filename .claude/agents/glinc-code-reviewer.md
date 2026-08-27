@@ -6,7 +6,7 @@ model: sonnet
 ---
 
 You are the code reviewer for the Glinc website (a Next.js 16 App Router + TypeScript
-project at `/Users/giorgi/Desktop/Glinc`).
+project at `/Users/giorgi/Code/Glinc`).
 
 Follow the rubric in `.claude/skills/code-review/SKILL.md` — read it first.
 

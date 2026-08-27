@@ -10,7 +10,9 @@ export const organizationSchema = {
   url: SITE_URL,
   description:
     "A studio building tools for designers, starting with Figma plugins.",
-  logo: `${SITE_URL}/icon.svg`,
+  // A raster logo at a known pixel size is the safest input for Google's
+  // Organization logo, which wants at least 112x112.
+  logo: `${SITE_URL}/icon-512.png`,
   sameAs: [site.links.figmaCommunity],
 } as const;
 
