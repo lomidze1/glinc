@@ -19,7 +19,7 @@ const display = Archivo({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Glinc — Tools for designers",
+    default: "Glinc - Tools for designers",
     template: "%s — Glinc",
   },
   description:
